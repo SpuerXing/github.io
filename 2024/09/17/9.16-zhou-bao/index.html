@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="9.8周报, Xing的博客">
-    <meta name="description" content="9.8周报，继续学习SpringBoot，并在云服务器上部署项目。">
+    <meta name="keywords" content="9.16周报, Xing的博客">
+    <meta name="description" content="继续学习SpringBoot，学习事务管理的控制和传播行为+AOP编程的使用步骤和基本注解语法">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>9.8周报 | Xing的博客</title>
+    <title>9.16周报 | Xing的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -259,12 +259,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/../images/wukong.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://sources0.oss-cn-beijing.aliyuncs.com/IMG_20240914_180500.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">9.8周报</h1>
+                    <h1 class="description center-align post-title">9.16周报</h1>
                 </div>
             </div>
         </div>
@@ -286,25 +286,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Markdown/" class="post-category">
-                                Markdown
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -313,21 +300,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-09-08
+                    2024-09-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-09-11
+                    2024-09-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    224
+                    410
                 </div>
                 
 
@@ -344,51 +331,39 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="9-8周报"><a href="#9-8周报" class="headerlink" title="9.8周报"></a>9.8周报</h1><p><img src="https://sources0.oss-cn-beijing.aliyuncs.com/IMG_20240907_174829_1.jpg"></img></p>
-<h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><ul>
-<li>配置文件三种方式<ul>
-<li>@value</li>
-<li>yml配置文件（常用）；yml基本语法：树结构，用空格分隔，”:”后写数据</li>
-<li>@ConfigurationProperties</li>
+                <h1 id="9-16-周报"><a href="#9-16-周报" class="headerlink" title="9.16 周报"></a>9.16 周报</h1><p><img src="https://sources0.oss-cn-beijing.aliyuncs.com/IMG_20240914_180500.jpg"></img></p>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><ol>
+<li>@Transactional注解 实现事务控制； 默认只对runtimeException回滚，使用 rollbackfor &#x3D; “Exception.class”  实现对特定异常进行回滚 </li>
+<li>事务传播行为@propagational ，【默认值】REQUIRED :需要事务，有则加入，无则创建新事务;  REQUIRED_NEW: 事务之间不相互影响</li>
+</ol>
+<h2 id="AOP（面向切面编程）"><a href="#AOP（面向切面编程）" class="headerlink" title="AOP（面向切面编程）"></a>AOP（面向切面编程）</h2><h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
+<li>在pom文件中导入依赖</li>
+<li>编写程序，在程序中使用@Aspect注解</li>
+</ol>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol>
+<li>连接点：被AOP控制的方法</li>
+<li>通知：Advice，指重复的逻辑，也就是共性功能</li>
+<li>切入点:PointCut，匹配连接点的条件，通知仅会在切入点方法执行时被应用</li>
+<li>切面：Aspect，描述通知与切入点的对应关系（通知+切入点）</li>
+<li>目标对象：Target，通知所应用的对象</li>
+</ol>
+<h3 id="通知的基本类型"><a href="#通知的基本类型" class="headerlink" title="通知的基本类型"></a>通知的基本类型</h3><ul>
+<li>环绕通知（默认）: @Around ，此注解标注的通知方法在目标方法前、后都被执行</li>
+<li>前置通知:@Before</li>
+<li>后置通知:@After</li>
+<li>异常通知：@AfterThrowing 抛出异常后执行通知</li>
+<li>返回后通知：@AfterReturning 此注解标注的通知方法在目标方法后被执行，有异常不会执<br>行</li>
 </ul>
-</li>
-<li>登录校验<ul>
-<li>会话技术<ul>
-<li>Cookie</li>
-<li>Session</li>
-<li>JWT令牌（常用）</li>
-</ul>
-</li>
-<li>统一拦截技术  <ul>
-<li>Filter过滤器<ul>
-<li>过滤器：执行流程 ；拦截路径：”&#x2F;*“ ”&#x2F;path“  ； 过滤器链  ；</li>
-</ul>
-</li>
-<li>interceptor拦截器（常用）；<ul>
-<li>拦截器：拦截路径（&#x2F;* 和 &#x2F;**的区别） ； 执行流程：Filter -&gt; DispatcherServelet -&gt; Interceptor -&gt; Controller</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>异常处理<ul>
-<li>全局异常处理器@RestControllerAdvice</li>
-<li>使用@ExceptionHandler捕获特定类型的异常</li>
-</ul>
-</li>
-</ul>
-<h2 id="使用阿里云服务器-域名-部署vue-Spring-前后端分离项目"><a href="#使用阿里云服务器-域名-部署vue-Spring-前后端分离项目" class="headerlink" title="使用阿里云服务器+域名 部署vue+Spring 前后端分离项目"></a>使用阿里云服务器+域名 部署vue+Spring 前后端分离项目</h2><pre><code>* 注意事项
-    * 记得开放云服务器端口
-    * 学会看nginx.config；application.yml文件，会更改配置
-</code></pre>
-<h2 id="使用hexo-git-github搭建个人博客（更简单）"><a href="#使用hexo-git-github搭建个人博客（更简单）" class="headerlink" title="使用hexo+git+github搭建个人博客（更简单）"></a>使用hexo+git+github搭建个人博客（更简单）</h2><ul>
-<li>了解git，hexo常见命令<ul>
-<li>hexo-g&#x2F;-d&#x2F;s&#x2F;clean</li>
-<li>学习使用hexo更换主题</li>
-</ul>
-</li>
-</ul>
+<h3 id="切入点表达式"><a href="#切入点表达式" class="headerlink" title="切入点表达式"></a>切入点表达式</h3><ol>
+<li>execution(访问修饰符? 返回值 包名.类名.?方法名(方法参数) throws 异常?)</li>
+<li>@annotation 使用注解匹配多个无规则的方法</li>
+</ol>
+<h2 id="AOP案例"><a href="#AOP案例" class="headerlink" title="AOP案例"></a>AOP案例</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>将案例中增、删、改相关接口的操作日志记录到数据库表中</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>新建@Mylog注解，标注在所有增删改的Controller方法上</li>
+<li>新建数据库log表格，新建OperateLog实体类，定义Mapper和Service层接口</li>
+<li>定义切面类</li>
+</ol>
 
                 
             </div>
@@ -402,11 +377,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -449,7 +420,7 @@
         repo: 'superYXing.github.io',
         owner: 'superYXing',
         admin: "superYXing",
-        id: '2024-09-08T17-25-00',
+        id: '2024-09-17T08-29-44',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -473,7 +444,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sun Sep 08 2024 17:25:00 GMT+0800',
+    id: 'Tue Sep 17 2024 08:29:44 GMT+0800',
     owner: 'superYXing',
     repo: 'blogIssue',
     oauth: {
@@ -771,9 +742,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/09/17/9.16-zhou-bao/">
                     <div class="card-image">
@@ -790,9 +762,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -801,6 +773,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -808,7 +781,7 @@ gitment.render('gitment-content');
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2024/09/08/9.8-zhou-bao/">
@@ -841,7 +814,6 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
