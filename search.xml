@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>9.18周报</title>
+      <link href="/2024/09/18/9.18-zhou-bao/"/>
+      <url>/2024/09/18/9.18-zhou-bao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="9-18周报"><a href="#9-18周报" class="headerlink" title="9.18周报"></a>9.18周报</h1><p><img src="https://sources0.oss-cn-beijing.aliyuncs.com/01.jpg"></img></p><h2 id="1-配置优先级"><a href="#1-配置优先级" class="headerlink" title="1.配置优先级"></a>1.配置优先级</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令行参数 &gt; java系统属性 &gt; propertities &gt; yml&gt; yaml</span><br></pre></td></tr></table></figure><h2 id="2-Bean管理"><a href="#2-Bean管理" class="headerlink" title="2.Bean管理"></a>2.Bean管理</h2><ol><li>①获取bean对象  ：先@Autowired application获取bean对象，然后用getBean获取bean对象（bean对象名称默认为首字母小写）</li></ol><p>②Bean的作用域 ：默认为单例，可以用@scope(prototype) 实现每次都创建新Bean对象</p><p>③第三方Bean：第三方依赖当中提供的类交给IOC容器管理，此时要在方法上加上一个@Bean注解</p><ol start="2"><li>导入工程范围外包的方法：@ComponentScan &#x2F; @Import &#x2F; @Enable****</li></ol><p>3.@SpringBootApplication 注解的组成</p><p>元注解+ @SpringBootConfiguration + @EnableAutoConfiguration+ @ComponentScan </p><p>4.@Conditional</p><p> 按照一定的条件进行判断，在满足给定条件后才会注册对应的bean对象到Spring的IOC容器中</p><h2 id="3-自定义starter案例"><a href="#3-自定义starter案例" class="headerlink" title="3.自定义starter案例"></a>3.自定义starter案例</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p> 定义aliyun-oss-spring-boot-starter，完成阿里云OSS操作工具类AliyunOSSUtils的自动配置。引入起步依赖引入之后，注入AliyunOSSUtils直接使用即可</p><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p> 1.创建starter+autoconfig 两个模块 starter的pom文件引入autoconfig依赖。通过依赖传递，后面直接引入starter即可</p><p>2.在autoconfig导入阿里云的工具类和属性类，并导入阿里云相关依赖，使其正常使用。</p><p>3.在autoconfig新建一个AliOSSAutoConfiguration类，通过@EnableConfigurationProperties注入属性，并使用@Bean把生成后的阿里云工具类交给ioc容器管理</p><p>4.新建测试类，在yml文件配置阿里云的属性信息，然后直接注入阿里云工具类。</p><p>注意：代码写完后一直报“空指针异常”错误，转天早上发现，是因为没有执行mvn install 命令刷新本地仓库，虽然代码写对，但maven仓库并没更新….修改了一天的bug</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>9.16周报</title>
       <link href="/2024/09/17/9.16-zhou-bao/"/>
       <url>/2024/09/17/9.16-zhou-bao/</url>
