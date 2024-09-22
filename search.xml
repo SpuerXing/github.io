@@ -5,6 +5,19 @@
     
     <entry>
       <title></title>
+      <link href="/2024/09/22/9.22-zhou-bao/"/>
+      <url>/2024/09/22/9.22-zhou-bao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="9-22周报"><a href="#9-22周报" class="headerlink" title="9.22周报"></a>9.22周报</h1><h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><ol><li>分模块管理</li><li>继承<ul><li>创建父模块，设置打包方式为pom</li><li>在子工程的pom.xml文件中，配置继承关系。</li><li>在父工程中配置各个工程共有的依赖</li></ul></li><li>版本锁定 ：在父工程的pom文件中通过 <dependencyManagement>标签 ； 使用<properties> 标签设置版本号变量</li><li>聚合 ：用于快速构建项目；<br> * 在父工程或聚合工程使用<modules> 标签</li><li>私服：公司内部的maven仓库，通过配置config文件来连接</li></ol><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol><li>《苍穹外卖》项目：着手搭建环境</li><li>面试题：&lt;dependencies&gt;和&lt;dependencyManagement&gt;标签的区别： ①前者是直接依赖，用于导入依赖包  ②后者是进行版本管理，不引入依赖包</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>敏捷开发和DevOps</title>
       <link href="/2024/09/20/hua-wei-yun-codearts-feng-huang-shang-cheng-xiang-mu-shi-jian/"/>
       <url>/2024/09/20/hua-wei-yun-codearts-feng-huang-shang-cheng-xiang-mu-shi-jian/</url>
       
