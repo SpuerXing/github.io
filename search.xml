@@ -4,7 +4,20 @@
   
     
     <entry>
-      <title></title>
+      <title>9.25 周报</title>
+      <link href="/2024/09/25/9.25-zhou-bao/"/>
+      <url>/2024/09/25/9.25-zhou-bao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="9-25-周报"><a href="#9-25-周报" class="headerlink" title="9.25 周报"></a>9.25 周报</h1><h2 id="《苍穹外卖》项目开发（22-25号三天进度20-）"><a href="#《苍穹外卖》项目开发（22-25号三天进度20-）" class="headerlink" title="《苍穹外卖》项目开发（22-25号三天进度20%）"></a>《苍穹外卖》项目开发（22-25号三天进度20%）</h2><ol><li>熟悉接口文档，使用yapi和swagger查看接口文档，postman接口测试,使用git管理代码。maven框架</li><li>开发员工登录接口，使用jwt令牌+拦截器完成登陆安全保护</li><li>开发员工分页查询接口，使用PageHelper分页插件简化sql查询</li><li>使用AOP实现更新时间、更新用户字段的自动填充：</li></ol><ul><li>自定义注解@AutoFill</li><li>在切面类AutoFillAspect用@Annotation扫描自定义注解</li><li>在切面类定义 ：当前时间和当前用户字段</li><li>获取方法签名对象&#x3D;&gt;获得注解对象&#x3D;&gt;获得value  ，再获得此实体对象，最后通过反射，完成赋值</li><li>在mapper层接口的删除和修改方法上添加@AutoFill注解</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>9.22周报</title>
       <link href="/2024/09/22/9.22-zhou-bao/"/>
       <url>/2024/09/22/9.22-zhou-bao/</url>
       
