@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>9.29周报</title>
+      <link href="/2024/09/30/9.29-zhou-bao/"/>
+      <url>/2024/09/30/9.29-zhou-bao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="9-29周报"><a href="#9-29周报" class="headerlink" title="9.29周报"></a>9.29周报</h1><h2 id="《苍穹外卖》开发（30-）"><a href="#《苍穹外卖》开发（30-）" class="headerlink" title="《苍穹外卖》开发（30%）"></a>《苍穹外卖》开发（30%）</h2><img src="https://sources0.oss-cn-beijing.aliyuncs.com/IMG_20240926_171934.jpg"></img>1.开发内容<p>完成菜品管理、套餐管理、分类管理对应的增删改查接口，主要技术点包括：</p><p>①动态sql，使用<if> 和 <foreach> 标签简化sql语句</p><p>②AOP切片，自动注入更新时间和更新用户两个字段  </p><p>③主键返回：insert语句返回主键id    ④事务管理： 在删除功能使用，如果抛出异常则回滚 </p><p>2.遇到问题</p><p>①由于select查询出来的属性名和注入的属性名不一样而报错 </p><p> ②使用阿里云oss上传图片未正确拼接url而报错  </p><p>③动态sql的 <foreach> 标签放错位置而报错  </p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>9.25 周报</title>
       <link href="/2024/09/25/9.25-zhou-bao/"/>
       <url>/2024/09/25/9.25-zhou-bao/</url>
